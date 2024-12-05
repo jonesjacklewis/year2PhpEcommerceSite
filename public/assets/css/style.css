@@ -1,0 +1,388 @@
+/* Base styles for HTML and BODY elements */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #f8f9fa; /* Light grey background */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #0074D9;
+}
+
+header h1 {
+    flex: 1 100%;
+    margin: 0;
+    padding: 0 20px;
+    color: #0074D9;
+    font-size: 24px;
+}
+
+header form {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+header form button {
+    background-color: #0074D9;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header form button:disabled {
+    background-color: #ccc;
+}
+
+header form button:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #0074D9;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    overflow: auto;
+}
+
+main form {
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+main form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+/* Input field styles, including variations */
+main form input[type="text"],
+main form input[type="password"],
+main form input[type="number"],
+main form input[type="tel"],
+main form input[type="email"],
+main form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    cursor: pointer; /* Pointer cursor for file input */
+}
+
+main form input[type="submit"],
+form input[type="submit"] { /* Consistent button styles */
+    background-color: #0074D9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main form input[type="submit"]:hover,
+form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+main form input[type="submit"]:disabled,
+form input[type="submit"]:disabled {
+    background-color: #ccc; /* Grey out disabled button */
+}
+
+main form input[type="file"]:hover {
+    background-color: #f3f3f3;
+}
+
+main p.error {
+    display: block;
+    margin: 15px 0 5px;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+/* Form select styles */
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 4 5"><path fill="rgba(0,0,0,0.6)" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    background-size: 12px;
+}
+
+/* Product and Invoice Container Grid Layout */
+.product-container, .invoice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.product-card, .invoice-card {
+    width: 300px;
+    background-color: #fff;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-image-wrapper, .invoice-image-wrapper {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.product-image, .invoice-image {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.product-info, .invoice-created-date {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.25em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price, .invoice-value {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.btn-buy:hover {
+    background-color: #0056b3;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.view-product-wrapper {
+    margin: 15px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.view-product-wrapper p.bigText {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.left-column, .right-column {
+    height: 100px;
+}
+
+.basket-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.basket-card img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.basket-card .item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-card .item-name {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.basket-card .item-price {
+    font-size: 0.9em;
+}
+
+.basket-card .item-quantity {
+    font-size: 0.9em;
+    /* Adjust as needed */
+}
+
+.basket-card .remove-button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Search Area Styling */
+.search {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 10px; /* Maintain spacing between forms */
+}
+
+.search input[type="text"] {
+    flex-grow: 1; /* Allow the text input to take most of the space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.search input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.search form:first-child {
+    flex-grow: 1;
+}
+
+.search form:last-child {
+    flex-grow: 0; /* Prevent the second form from growing */
+    flex-shrink: 0; /* Prevent the second form from shrinking */
+}
+
+/* Ensure forms are not overly wide */
+.search form:not(:first-child) {
+    width: auto; /* Only as wide as their content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .basket-card {
+        flex-direction: column;
+    }
+
+    .basket-card img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .search form {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        width: 90%; /* Reduce width to fit smaller screens */
+        margin: 0 auto; /* Ensure the form is centered */
+    }
+
+    .search input[type="text"],
+    .search input[type="submit"] {
+        width: 100%; /* Inputs and buttons take full width */
+        margin-top: 5px; /* Add top margin for spacing */
+        margin-right: 0; /* Remove right margin as it's unnecessary */
+    }
+
+    .search input[type="text"] {
+        margin-right: 0; /* Ensure no right margin is applied */
+        margin-bottom: 10px; /* Add some space before the submit button */
+    }
+
+    .search input[type="submit"] {
+        margin-bottom: 0; /* No bottom margin needed */
+    }
+}
